@@ -3,6 +3,8 @@ package com.raulcabrera.venadostest.activities;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.raulcabrera.venadostest.R;
+import com.raulcabrera.venadostest.fragments.HomeFragment;
+import com.raulcabrera.venadostest.fragments.PlayersFragment;
+import com.raulcabrera.venadostest.fragments.StatisticsFragment;
 
 public class VenadosActivity extends AppCompatActivity
 		implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,6 +37,8 @@ public class VenadosActivity extends AppCompatActivity
 
 		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 		navigationView.setNavigationItemSelectedListener(this);
+
+		presentUI(R.id.nav_home);
 	}
 
 	@Override
@@ -72,15 +79,35 @@ public class VenadosActivity extends AppCompatActivity
 		// Handle navigation view item clicks here.
 		int id = item.getItemId();
 
-		if (id == R.id.nav_home) {
+		presentUI(id);
 
-		} else if (id == R.id.nav_players) {
-
-		} else if (id == R.id.nav_statistics) {
-
-		}
 		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 		drawer.closeDrawer(GravityCompat.START);
 		return true;
+	}
+
+	private void presentUI(int selectedMenuItem) {
+		FragmentManager fm = getSupportFragmentManager();
+		Fragment f = fm.findFragmentById(R.id.main_container);
+
+		if(f != null) {
+			fm.beginTransaction().remove(f).commit();
+		}
+
+		switch (selectedMenuItem) {
+			case R.id.nav_home:
+				f = new HomeFragment();
+				break;
+			case R.id.nav_players:
+				f = new PlayersFragment();
+				break;
+			case R.id.nav_statistics:
+				f = new StatisticsFragment();
+				break;
+		}
+
+		fm.beginTransaction()
+		  .add(R.id.main_container, f)
+		  .commit();
 	}
 }
