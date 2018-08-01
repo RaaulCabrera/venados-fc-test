@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:background="@drawable/games_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/list_card_game"
+        android:layout_alignBottom="@id/list_card_game"
+        android:layout_alignLeft="@id/list_card_game"
+        android:layout_alignRight="@id/list_card_game"/>
+
+    <LinearLayout
+        android:id="@+id/list_card_game"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/game_month_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#C64B56"
+            android:padding="5dp"
+            android:text="Agosto"
+            android:textColor="@android:color/white" />
+
+        <TableLayout
+            android:id="@+id/games_of_the_month_tbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TableLayout>
+        <View
+            android:background="#C64B56"
+            android:layout_width="match_parent"
+            android:layout_height="3dp" />
+    </LinearLayout>
+
+</RelativeLayout>
