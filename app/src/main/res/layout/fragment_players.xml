@@ -10,10 +10,7 @@
         android:layout_height="match_parent">
 
         <GridLayout
-
             android:columnCount="3"
-            app:useDefaultMargins="true"
-            app:rowOrderPreserved="false"
             android:alignmentMode="alignBounds"
 
             android:layout_width="match_parent"
@@ -27,6 +24,7 @@
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/test_player_1"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/grass_pattern"
@@ -52,6 +50,7 @@
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/test_player_2"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/grass_pattern"
@@ -77,6 +76,7 @@
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/test_player_3"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/grass_pattern"
@@ -102,6 +102,7 @@
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/test_player_4"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/grass_pattern"
@@ -127,6 +128,7 @@
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/test_player_5"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/grass_pattern"
@@ -151,7 +153,9 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                <de.hdodenhof.circleimageview.CircleImageView
+
+                    android:id="@+id/test_player_6"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/grass_pattern"
